@@ -1,0 +1,11 @@
+.employees-container {
+    margin: 0;
+    left: 0;
+    text-indent: 0;
+
+    & li {
+        list-style-type: none;
+        border-bottom: 1px solid red;
+        padding: 10px;
+    }
+}

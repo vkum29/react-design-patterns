@@ -1,0 +1,4 @@
+{
+	"todoApi":  "http://dummy.restapiexample.com/api/v1/employees",
+	"noResults": "We are unable to find any todo for you"
+}
