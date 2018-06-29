@@ -30,3 +30,35 @@
 	text-shadow: none;
 	margin-right: 5px;
 }
+
+.app-loading {
+	position: relative;
+}
+
+.app-loading::before {
+	content: "\00B7";
+	font-size: 48px;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border: 2px solid grey;
+	border-radius: 50%;
+	line-height: 24px;
+	vertical-align: middle;
+	text-shadow: none;
+	margin-right: 5px;
+	text-indent: 17px;
+	animation: loader-spin infinite 2s linear;
+}
+
+.app-loading.app-error,
+.app-loading.app-error::before {
+	border-color: purple;
+	color: purple;
+}
+
+@keyframes loader-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+

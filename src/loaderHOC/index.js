@@ -10,7 +10,7 @@ const loaderHOC = (WrapperComponent) => {
 			return isDataLoaded ? (
 				<WrapperComponent {...this.props} />
 			): (
-				<Text className='app-error' info={'Loading information please wait'} />
+				<Text className='app-error app-loading' info={'Loading information please wait'} />
 			)
 		}
 

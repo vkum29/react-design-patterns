@@ -4,6 +4,7 @@ import FunctionalComponent from './header';
 import StatelessComponent from './text';
 import StatefulComponent from './img';
 import ArticleContainer from './articleContainer';
+import RenderCallback from './renderCallback';
 
 import './App.css';
 
@@ -17,7 +18,11 @@ class App extends Component {
 
 				<StatefulComponent alt={`We are sorry, we could not to load image`} className='app-error' />
 
-				<ArticleContainer />
+				<RenderCallback>
+					{() => (
+						<ArticleContainer />
+					)}
+				</RenderCallback>
 
 			</section>
     );

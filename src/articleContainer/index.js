@@ -5,10 +5,6 @@ import Article from '../article';
 import data from '../config.json';
 
 class ArticleContainer extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	componentDidMount = () => {
 		this.simulateDynamicData(() => {
 			this.setNewData([data]);
