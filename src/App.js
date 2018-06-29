@@ -5,12 +5,13 @@ import StatelessComponent from './text';
 import StatefulComponent from './img';
 import ArticleContainer from './articleContainer';
 import RenderCallback from './renderCallback';
+import Error from './errorBoundary/error';
 
 import './App.css';
 
 class App extends Component {
   render() {
-		return (
+		return(
 			<section className="app">
 				<FunctionalComponent logo={logo} title='React design patterns' />
 
@@ -23,7 +24,7 @@ class App extends Component {
 						<ArticleContainer />
 					)}
 				</RenderCallback>
-
+				<Error />
 			</section>
     );
   }
