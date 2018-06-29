@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Text from '../text';
+import AppContext from '../context';
+const loggedInUserInfo = { 'isLoggedIn': true, 'displayName': 'loggedInUser' };
 
 class renderCallback extends Component {
 	constructor(props) {
@@ -24,7 +26,9 @@ class renderCallback extends Component {
 
 	render = () => {
 		return this.state.isLoggedIn ? (
-			this.props.children(this.props.data)
+			<AppContext.Provider value={loggedInUserInfo}>{
+				this.props.children(loggedInUserInfo)
+			}</AppContext.Provider>
 		) : (
 			<Text className='app-loading' info={'Please wait while we authenticate your details.'} />
 		);
