@@ -7,13 +7,12 @@ import data from '../config.json';
 class ArticleContainer extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			articles: [{}]
-		};
 	}
 
 	componentDidMount = () => {
-		this.setNewData([data]);
+		this.simulateDynamicData(() => {
+			this.setNewData([data]);
+		}, 2000);
 	}
 
 	updateArticle = () => {
@@ -38,8 +37,8 @@ class ArticleContainer extends Component {
 		});
 	}
 
-	simulateDynamicData (cb) {
-		setTimeout(cb, 500);
+	simulateDynamicData (cb, time=500) {
+		setTimeout(cb, time);
 	}
 
 	render() {
