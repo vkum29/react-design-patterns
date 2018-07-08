@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import FunctionalComponent from './header';
+import StatelessComponent from './text';
+import StatefulComponent from './img';
+import ArticleContainer from './articleContainer';
+import RenderCallback from './renderCallback';
+import Error from './errorBoundary/error';
+
 import './App.css';
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+		return(
+			<section className="app">
+				<FunctionalComponent logo={logo} title='React design patterns' />
+
+				<StatelessComponent className='app-intro' info='I am stateless component' />
+
+				<StatefulComponent alt={`We are sorry, we could not to load image`} className='app-error' />
+
+				<RenderCallback>
+					{() => (
+						<ArticleContainer />
+					)}
+				</RenderCallback>
+				<Error />
+			</section>
     );
   }
 }

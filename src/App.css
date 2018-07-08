@@ -1,28 +1,64 @@
-.App {
-  text-align: center;
+.app {
+	text-align: center;
+	padding: 0  0 10px 0;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.app-title {
+	font-size: 2.5em;
+	line-break: 1;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	margin: .5rem 0
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
+.app-intro {
   font-size: large;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.app-error {
+	color: red;
+	position: relative;
+	text-shadow: 1px 1px 2px #bbb;
 }
+
+.app-error::before {
+	content: "X";
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border: 1px solid red;
+	border-radius: 50%;
+	box-shadow: 0 0 5px #aaa;
+	line-height: 24px;
+	vertical-align: middle;
+	text-shadow: none;
+	margin-right: 5px;
+}
+
+.app-loading {
+	position: relative;
+}
+
+.app-loading::before {
+	content: "\00B7";
+	font-size: 48px;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border: 2px solid grey;
+	border-radius: 50%;
+	line-height: 24px;
+	vertical-align: middle;
+	text-shadow: none;
+	margin-right: 5px;
+	text-indent: 17px;
+	animation: loader-spin infinite 2s linear;
+}
+
+.app-loading.app-error,
+.app-loading.app-error::before {
+	border-color: purple;
+	color: purple;
+}
+
+@keyframes loader-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
